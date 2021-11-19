@@ -5,17 +5,9 @@
 <style>
     header {
         display: flex;
-        padding: 1.5em;
+        padding: 1em;
         align-items: center;
         justify-content: center;
-        color: #75E4DE;
-    }
-
-    h1 {
-        color: #04C1E1;
-        text-transform: capitalize;
-        font-size: 2em;
-        font-weight: 100;
-        font-size: "Roboto Slab", serif;
+        color: #75e4de;
     }
 </style>

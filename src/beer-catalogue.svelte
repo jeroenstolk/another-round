@@ -41,14 +41,7 @@
 {/await}
 
 <style>
-    button {
-        border-radius: 5px;
-        background-color: #f3e803;
-        color: #000;
-        padding: 0.65em 1.1em;
-        font-size: 1.2rem;
-        cursor: pointer;
-    }
+    
     .container {
         display: flex;
         flex-direction: row;

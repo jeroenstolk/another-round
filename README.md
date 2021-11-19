@@ -3,7 +3,7 @@ The used API: https://punkapi.com/documentation/v2
 # helpful resources
 
 ## Color scheme used
-https://www.schemecolor.com/summer-theme-color-scheme.php
+- https://www.schemecolor.com/summer-theme-color-scheme.php
 
 ## Helping me sort my API calls:
 - https://stackoverflow.com/a/66394427
