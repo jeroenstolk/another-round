@@ -1,31 +1,22 @@
 <script>
-	import Beers from "./beers.svelte";
-	export let title;
+	import Beers from "./beer-catalogue.svelte";
+	import Header from "./UI/header.svelte";
 </script>
 
-<main>
-	<h1>{title}</h1>
-<Beers />
-
-</main>
+<Header />
+<section class="main">
+	<Beers />
+</section>
 
 <style>
-	main {
+	.main {
 		text-align: center;
-		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
 	@media (min-width: 640px) {
-		main {
+		.main {
 			max-width: none;
 		}
 	}

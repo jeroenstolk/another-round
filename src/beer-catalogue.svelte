@@ -1,4 +1,26 @@
 <script>
+    import BeerCard from "./beer-card.svelte";
+    import Loading from "./UI/loading.svelte";
+    import { gsap } from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+    import { onMount } from "svelte";
+
+    let gsapCard;
+
+    const trigger = () => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from(".container", {
+            scrollTrigger: gsapCard,
+            opacity: 0,
+            duration: 2
+        });
+        gsap.to(".container", {
+            scrollTrigger: gsapCard,
+            opacity: 1,
+            duration: 2
+        });
+    };
+
     let beers = Promise.resolve([]);
 
     async function fetchBeers(url) {
@@ -6,6 +28,8 @@
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
+        } else {
+            trigger();
         }
 
         beers = await response.json();
@@ -14,23 +38,26 @@
     const beerRandom = () =>
         fetchBeers("https://api.punkapi.com/v2/beers/random");
     const beerAll = () => fetchBeers("https://api.punkapi.com/v2/beers");
+    const beerAdd = () => fetchBeers("https://api.punkapi.com/v2/beers");
 
     beerAll();
 </script>
 
 <!-- Stop hitting GitHub on every source edit -->
 <button on:click={beerAll}>All beers</button>
+<button on:click={beerAdd}>Add a beer</button>
 <button on:click={beerRandom}>Random beer</button>
 
+<div class="testing">testing</div>
+
 {#await beers}
-    <p>...waiting</p>
+    <Loading />
 {:then beers}
-    <div class="container">
+    <div class="container" bind:this={gsapCard}>
+        <Loading />
         {#each beers as { id, name, image_url } (id)}
-            <div class="item">
-                <img src={image_url} alt={id} />
-                <h3>{name}</h3>
-                <button>Read more</button>
+            <div class="hidden">
+                <BeerCard {name} {image_url} {id} />
             </div>
         {/each}
     </div>
@@ -39,12 +66,6 @@
 {/await}
 
 <style>
-    img {
-        max-height: 300px;
-    }
-    h3 {
-        color: #fff;
-    }
     button {
         border-radius: 5px;
         background-color: #f3e803;
@@ -59,11 +80,7 @@
         width: 100%;
         flex-wrap: wrap;
     }
-    .item {
-        flex-basis: max-content;
-        flex: 1 1 auto;
-        width: calc(100% / 3);
-        background: radial-gradient(#75e4de, #04c1e1);
-        border: 1px solid #fff;
+    .hidden {
+        opacity: 1;
     }
 </style>
