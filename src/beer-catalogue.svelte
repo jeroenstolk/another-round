@@ -1,25 +1,6 @@
 <script>
     import BeerCard from "./beer-card.svelte";
     import Loading from "./UI/loading.svelte";
-    import { gsap } from "gsap";
-    import ScrollTrigger from "gsap/ScrollTrigger";
-    import { onMount } from "svelte";
-
-    let gsapCard;
-
-    const trigger = () => {
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.from(".container", {
-            scrollTrigger: gsapCard,
-            opacity: 0,
-            duration: 2
-        });
-        gsap.to(".container", {
-            scrollTrigger: gsapCard,
-            opacity: 1,
-            duration: 2
-        });
-    };
 
     let beers = Promise.resolve([]);
 
@@ -28,8 +9,6 @@
 
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
-        } else {
-            trigger();
         }
 
         beers = await response.json();
@@ -48,17 +27,13 @@
 <button on:click={beerAdd}>Add a beer</button>
 <button on:click={beerRandom}>Random beer</button>
 
-<div class="testing">testing</div>
-
 {#await beers}
     <Loading />
 {:then beers}
-    <div class="container" bind:this={gsapCard}>
+    <div class="container">
         <Loading />
         {#each beers as { id, name, image_url } (id)}
-            <div class="hidden">
-                <BeerCard {name} {image_url} {id} />
-            </div>
+            <BeerCard {name} {image_url} {id} />
         {/each}
     </div>
 {:catch error}
@@ -79,8 +54,5 @@
         flex-direction: row;
         width: 100%;
         flex-wrap: wrap;
-    }
-    .hidden {
-        opacity: 1;
     }
 </style>
