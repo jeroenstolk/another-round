@@ -1,12 +1,11 @@
 <script>
 	import Beers from "./beers.svelte";
-	export let name;
+	export let title;
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	<Beers />
+	<h1>{title}</h1>
+<Beers />
 
 </main>
 
