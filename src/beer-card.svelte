@@ -25,6 +25,7 @@
         padding: 0.65em 1.1em;
         font-size: 1.2rem;
         cursor: pointer;
+        align-self: center;
     }
     .item {
         display: flex;

@@ -12,27 +12,10 @@ https://www.schemecolor.com/summer-theme-color-scheme.php
 ## Image upload:
 - https://svelte.dev/repl/596d671cba1942f49184618d439b243c?version=3.44.1
 
-# svelte app
-
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
-
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+## Google font
+- https://fonts.google.com/specimen/Roboto+Slab
 
 ```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
+useful code goes here
+and here
 ```
-
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
-
-
-## Get started
-
-Install the dependencies...
-
-```bash
-cd svelte-app
-npm install
-```
-
-...then start [Rollup](https://rollupjs.org):
