@@ -2,7 +2,7 @@
     import BeerCard from "./beer-card.svelte";
     import Loading from "../UI/loading.svelte";
     import { fade } from "svelte/transition";
-    import { onMount } from "svelte";
+    import { onMount } from "svelte";  
 
     let visible = false;
     let showForm = false;
