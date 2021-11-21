@@ -1,11 +1,11 @@
 <script>
-    import Lazy from "svelte-lazy";
     export let name;
     export let image_url;
     export let id;
+    export let added;
 </script>
 
-<div class="item">
+<div class="item {added ? 'added' : ''}">
     <img src={image_url} alt={name} {id} />
     <h3>{name}</h3>
     <button>Read more</button>
@@ -35,4 +35,5 @@
         width: initial;
         align-self: center;
     }
+    .added {background: radial-gradient(#B7EBB9, #75E4DE)}
 </style>

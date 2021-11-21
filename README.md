@@ -19,3 +19,25 @@ The used API: https://punkapi.com/documentation/v2
 useful code goes here
 and here
 ```
+
+## snippets
+
+- https://www.javascripture.com/FileReader
+```
+<input type='file' accept='image/*' onchange='openFile(event)'><br>
+<img id='output'>
+<script>
+  var openFile = function(event) {
+    var input = event.target;
+
+    var reader = new FileReader();
+    reader.onload = function(){
+      var dataURL = reader.result;
+console.log(dataURL);
+    };
+    reader.readAsDataURL(input.files[0]);
+  };
+</script>
+```
+
+- https://reqbin.com/
