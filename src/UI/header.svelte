@@ -31,4 +31,8 @@
         padding: 2em;
     }
     h3 {color: #000}
+    @media (max-width: 1000px) {
+        h1 {font-size: 3rem;}
+        h3 {font-size: 2.5rem}
+    }
 </style>

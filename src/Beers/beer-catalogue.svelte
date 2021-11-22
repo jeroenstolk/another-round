@@ -16,9 +16,9 @@
     var loading = true;
     let beers = Promise.resolve([]);
 
-    let fName = "name here";
-    let fDescription = "desc here";
-    let fTagline = "tag here";
+    let fName = "";
+    let fDescription = "";
+    let fTagline = "";
     let fImage = "";
 
     async function fetchBeers(url) {
@@ -74,19 +74,20 @@
 </script>
 
 <div class={showForm ? "formAdd" : "formAdd hidden"}>
-    <div class="closeFormAdd" on:click={handleFormAddBeer}>Luk</div>
+    <div class="closeFormAdd" on:click={handleFormAddBeer}></div>
     <form on:submit|preventDefault={submitHandle}>
         <label for="fName">Name:</label>
-        <input type="text" id="fName" bind:value={fName} />
+        <input type="text" id="fName" placeholder="Beer name" bind:value={fName} />
         <label for="fDescription">Description:</label>
-        <textarea rows="3" id="fDescription" bind:value={fDescription} />
+        <textarea rows="3" id="fDescription" placeholder="Description" bind:value={fDescription} />
         <label for="fTagline">Tagline:</label>
-        <input type="text" id="fTagline" bind:value={fTagline} />
-        <label for="fImage">Tagline:</label>
+        <input type="text" id="fTagline" placeholder="Tagline" bind:value={fTagline} />
+        <label for="fImage">Upload image:</label>
         <input
             type="file"
             accept=".jpg, .jpeg, .png"
             id="fImage"
+            
             on:change={(e) => onFileSelected(e)}
             bind:value={fImage}
         />
@@ -160,7 +161,9 @@
         background: #fff;
         box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.3);
         padding: 2em;
+        z-index: 1;
     }
+    label {font-weight: bold;padding-top: 1em;}
     @media (max-width: 600px) {
         .formAdd {
             width: 90%;
@@ -170,5 +173,11 @@
         display: flex;
         justify-content: flex-end;
         cursor: pointer;
+        content: "U+02716";
+    }
+    .closeFormAdd:after {
+        content: ' \02716';
+        font-size: 3rem;
+        color: rgba(0,0,0,0.5)
     }
 </style>

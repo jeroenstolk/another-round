@@ -6,7 +6,6 @@
 	import Loading from "./UI/loading.svelte";
 
 	let detailsView = false;
-	let loading = true;
 	let selectedBeer = 0;
 	let beersData = Promise.resolve([]);
 	let response = [];
@@ -25,9 +24,6 @@
 		}
 
 		beersData = await response.json();
-		setTimeout(function () {
-			loading = false;
-		}, 3000);
 	}
 
 	function handleRequestSeeDetails(event) {
@@ -47,14 +43,9 @@
 		<button on:click={handleBeerAll}>Back to all beers</button>
 	</nav>
 {/if}
-{#if loading}
-			<Loading />
-		{/if}
 <section class="main">
 	{#await beersData}
-		{#if loading}
-			<Loading />
-		{/if}
+		<Loading />
 	{:then beersData}
 		{#if detailsView}
 			{#each beersData as item (item.id)}
