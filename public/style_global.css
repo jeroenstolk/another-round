@@ -74,6 +74,9 @@ button {
     padding: 0.65em 1.1em;
     cursor: pointer;
 }
+button:hover {
+    filter: contrast(125%);
+}
 
 nav {
     padding: 2em 0;

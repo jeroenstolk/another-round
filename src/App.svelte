@@ -26,7 +26,7 @@
 
 		beersData = await response.json();
 		setTimeout(function () {
-			loading = true;
+			loading = false;
 		}, 3000);
 	}
 
@@ -47,6 +47,9 @@
 		<button on:click={handleBeerAll}>Back to all beers</button>
 	</nav>
 {/if}
+{#if loading}
+			<Loading />
+		{/if}
 <section class="main">
 	{#await beersData}
 		{#if loading}
