@@ -1,3 +1,5 @@
+[image](https://user-images.githubusercontent.com/16773626/142920634-a1e3bd43-ba70-4b71-8e75-2f6c5e7c9594.png)
+
 # svelte app
 
 This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
@@ -9,7 +11,8 @@ npx degit sveltejs/template svelte-app
 cd svelte-app
 ```
 
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+*Note that you will need to have [Node.js](https://nodejs.org) installed.*!
+
 
 
 ## Get started
