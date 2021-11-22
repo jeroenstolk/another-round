@@ -33,10 +33,13 @@ By default, the server will only respond to requests from localhost. To allow co
 
 If you're using [Visual Studio Code](https://code.visualstudio.com/) we recommend installing the official extension [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). If you are using other editors you may need to install a plugin in order to get syntax highlighting and intellisense.
 
-## Case details
+# Case details
 
-The used API: https://punkapi.com/documentation/v2
-# helpful resources
+## API
+- https://punkapi.com/documentation/v2
+
+## API request tester
+- https://reqbin.com/
 
 ## Color scheme used
 - https://www.schemecolor.com/summer-theme-color-scheme.php
@@ -51,29 +54,3 @@ The used API: https://punkapi.com/documentation/v2
 ## Google font
 - https://fonts.google.com/specimen/Roboto+Slab
 
-```bash
-useful code goes here
-and here
-```
-
-## snippets
-
-- https://www.javascripture.com/FileReader
-```
-<input type='file' accept='image/*' onchange='openFile(event)'><br>
-<img id='output'>
-<script>
-  var openFile = function(event) {
-    var input = event.target;
-
-    var reader = new FileReader();
-    reader.onload = function(){
-      var dataURL = reader.result;
-console.log(dataURL);
-    };
-    reader.readAsDataURL(input.files[0]);
-  };
-</script>
-```
-
-- https://reqbin.com/
