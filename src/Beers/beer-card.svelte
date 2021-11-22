@@ -1,14 +1,25 @@
 <script>
+    import { createEventDispatcher } from "svelte";
+
     export let name;
     export let image_url;
     export let id;
     export let added;
+    export let image;
+
+    const dispatch = createEventDispatcher();
+
+    function handleSeeDetails() {
+        dispatch("seeDetails", {
+            id: id,
+        });
+    }
 </script>
 
 <div class="item {added ? 'added' : ''}">
-    <img src={image_url} alt={name} {id} />
+    <img src={added ? image : image_url} alt={name} {id} />
     <h3>{name}</h3>
-    <button>Read more</button>
+    <button on:click={handleSeeDetails}>Read more</button>
 </div>
 
 <style>
@@ -17,16 +28,17 @@
     }
     h3 {
         color: #fff;
+        margin:  1em 0;
     }
     button {
         align-self: center;
+        margin-top: auto;
     }
     .item {
         display: flex;
         flex-direction: column;
         flex-basis: max-content;
         flex: 1 1 auto;
-        width: calc(100% / 3);
         background: radial-gradient(#75e4de, #04c1e1);
         border: 1px solid #fff;
         padding: 1em;
@@ -35,5 +47,7 @@
         width: initial;
         align-self: center;
     }
-    .added {background: radial-gradient(#B7EBB9, #75E4DE)}
+    .added {
+        background: radial-gradient(#b7ebb9, #75e4de);
+    }
 </style>

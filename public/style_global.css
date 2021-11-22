@@ -18,6 +18,7 @@ body {
     padding: 0;
     font-size: 1.6rem;
     background-color: #fff;
+    color: #000;
 }
 p {
     float: left;
@@ -48,6 +49,7 @@ h3,
 .h3 {
     font-style: normal;
     font-weight: 700;
+    color: #75e4de;
 }
 h1,
 .h1 {
@@ -94,3 +96,7 @@ form button {
     margin: 1em;
 }
 .hidden {display: none;}
+
+ul {list-style: disc; padding-left: 2em}
+ul ul {list-style: square; padding-left: 2em;}
+li {padding: 0.2em}

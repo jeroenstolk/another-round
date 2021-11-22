@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "gsap": "^3.8.0",
+    "ky": "^0.28.7",
     "sirv-cli": "^1.0.0",
     "svelte-lazy": "^1.0.12"
   }
