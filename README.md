@@ -1,4 +1,6 @@
-https://user-images.githubusercontent.com/16773626/142920634-a1e3bd43-ba70-4b71-8e75-2f6c5e7c9594.png
+![app preview](https://user-images.githubusercontent.com/16773626/142920634-a1e3bd43-ba70-4b71-8e75-2f6c5e7c9594.png)
+
+
 
 # svelte app
 
