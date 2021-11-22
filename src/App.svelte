@@ -56,7 +56,10 @@
 		{/if}
 	{:catch error}
 		<p style="color: red">{error.message}</p>
-	{/await}<!--  -->
+	{/await}
+	<div style="padding: 2em">
+	<Loading />
+</div>
 	<Footer />
 </section>
 
