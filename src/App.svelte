@@ -4,6 +4,8 @@
 	import Header from "./UI/header.svelte";
 	import Footer from "./UI/footer.svelte";
 	import Loading from "./UI/loading.svelte";
+	import Soundbars from "./UI/soundbars.svelte";
+	
 
 	let detailsView = false;
 	let selectedBeer = 0;
@@ -38,6 +40,9 @@
 </script>
 
 <Header />
+<Soundbars/>
+
+
 {#if detailsView}
 	<nav>
 		<button on:click={handleBeerAll}>Back to all beers</button>
