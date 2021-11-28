@@ -20,7 +20,6 @@
     setInterval(function () {
         barsDataTween.set(getSoundValues(12));
     }, 150);
-
 </script>
 
 <ul class="hidden">
@@ -30,7 +29,10 @@
 </ul>
 <div class="soundbars">
     {#each soundValues as value, index}
-        <div class="soundbar" style="height: {Math.round($barsDataTween[index])}%" />
+        <div
+            class="soundbar"
+            style="height: {Math.round($barsDataTween[index])}%"
+        />
     {/each}
 </div>
 
@@ -40,7 +42,7 @@
         flex-direction: row;
         align-items: flex-end;
         height: 50px;
-        gap: 0.2em;
+        gap: 4px;
     }
     :global(.soundbar) {
         width: 2%;
