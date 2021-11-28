@@ -3,7 +3,7 @@
     import { bounceInOut } from "svelte/easing";
 
     function getSoundValues(total) {
-        let barsData = [];
+        const barsData = [];
         for (let index = 0; index < total; index++) {
             barsData.push(Math.random() * 100);
         }
@@ -39,16 +39,16 @@
         display: flex;
         flex-direction: row;
         align-items: flex-end;
-        height: 100px;
+        height: 50px;
         gap: 0.2em;
     }
     :global(.soundbar) {
         width: 2%;
         background-color: #e5e5f7;
-        background-image: linear-gradient(0deg, #000 50%, #fff 50%);
-        background-size: 10px 10px;
+        background-size: 100% 10px;
         background-position: bottom;
         image-rendering: optimizeQuality;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='50' width='100'%3E%3Crect width='100' height='25' x='0' y='0' style='fill:white;' /%3E%3Crect width='100' height='25' x='0' y='25' style='fill:black;' /%3E%3C/svg%3E");
     }
     .hidden {
         display: none;
